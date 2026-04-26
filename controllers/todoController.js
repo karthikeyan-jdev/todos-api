@@ -1,7 +1,10 @@
+import connectDB from "../config/db.js";
 import { todoModel } from "../models/todo.js";
 
 //post
 export const postTodos = async (req, res) => {
+  await connectDB();
+
   const { title, description } = req.body;
   // const  age  = parseInt(req.body.age);??
   try {
@@ -23,6 +26,8 @@ export const postTodos = async (req, res) => {
 //get
 export const getTodos = async (req, res) => {
   try {
+    await connectDB();
+
     const todos = await todoModel.find({ user: req.user.id });
     res.json(todos);
   } catch (err) {
@@ -35,7 +40,8 @@ export const getTodos = async (req, res) => {
 export const updateTodos = async (req, res) => {
   const { title, description } = req.body;
   const { id } = req.params;
-  console.log("id:", id);
+  await connectDB();
+
   try {
     const updatedTodo = await todoModel.findByIdAndUpdate(
       { _id: id, user: req.user.id },
@@ -56,6 +62,8 @@ export const updateTodos = async (req, res) => {
 export const deleteTodos = async (req, res) => {
   const { id } = req.params;
   try {
+    await connectDB();
+
     const deletedTodo = await todoModel.findByIdAndDelete({
       _id: id,
       user: req.user.id,
