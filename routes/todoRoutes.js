@@ -10,9 +10,9 @@ import { protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 // CRUD operations for todos
-router.post("/",protect, postTodos);
-router.get("/",protect, getTodos);
-router.put("/:id",protect, updateTodos);
-router.delete("/:id",protect, deleteTodos);
+router.post("/", protect, postTodos);
+router.get("/", protect, getTodos);
+router.put("/:id", protect, updateTodos);
+router.delete("/:id", protect, deleteTodos);
 
 export default router;
