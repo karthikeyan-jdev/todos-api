@@ -21,8 +21,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello, World!" });
 });
 
-// app.use("/api/todos", todoRoutes);
-// app.use("/api/auth", authRoutes);
+app.use("/api/todos", todoRoutes);
+app.use("/api/auth", authRoutes);
 
 // ✅ ONLY run locally
 app.listen(PORT, () => {
