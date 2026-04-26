@@ -8,7 +8,7 @@ import authRoutes from "./routes/authRoutes.js";
 dotenv.config();
 
 // Connect DB
-connectDB();
+await connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +26,5 @@ app.use("/api/auth", authRoutes);
 
 // ✅ ONLY run locally
 app.listen(PORT, () => {
-  connectDB();
   console.log(`Server running on port ${PORT}`);
 });
