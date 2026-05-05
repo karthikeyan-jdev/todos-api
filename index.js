@@ -9,13 +9,12 @@ await connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://todos-api-dusky.vercel.app"
-  ],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://todos-web-eta.vercel.app"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
