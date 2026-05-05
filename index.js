@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors({
   origin: [
-    "http://localhost:5174",
-    "https://todos-web-eta.vercel.app"
+    "http://localhost:5173",
+    "https://todos-api-dusky.vercel.app"
   ],
   credentials: true
 }));
