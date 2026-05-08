@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:4173", "https://todos-web-eta.vercel.app"],
+    origin: ["http://localhost:5173", "https://todos-web-eta.vercel.app"],
     credentials: true,
   }),
 );
