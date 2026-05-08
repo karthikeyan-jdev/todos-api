@@ -6,7 +6,7 @@ import connectDB from "../config/db.js";
 export const signupUser = async (req, res) => {
   const { name, email, password } = req.body;
   try {
-    await connectDB();
+    // await connectDB();
 
     // handle error
     if (!name || !email || !password) {
@@ -49,7 +49,7 @@ export const signupUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
-    await connectDB();
+    // await connectDB();
     if (!email || !password) {
       return res.status(400).json({ error: "Please fill all the fields" });
     }
