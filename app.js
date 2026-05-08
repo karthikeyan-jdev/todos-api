@@ -8,9 +8,13 @@ const app = express();
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://todos-web-eta.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
 );
+
+app.options("*", cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
